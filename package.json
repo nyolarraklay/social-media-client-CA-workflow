@@ -1,6 +1,6 @@
 {
   "name": "worflow-ca",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Using social media app for unit testing and E2E",
   "main": "index.js",
   "type": "module",
