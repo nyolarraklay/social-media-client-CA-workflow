@@ -49,7 +49,7 @@ describe("Social Media App: Unauthorized user", () => {
       cy.get("#loginForm").submit();
       cy.wait(1000);
       cy.visit(
-        "https://nyolarraklay.github.io/social-media-client-CA-workflow/?view=profile&name=klay"
+        "http://127.0.0.1:5501/index.html"
       );
       cy.wait(1000);
       cy.get(".btn-outline-warning").dblclick();
