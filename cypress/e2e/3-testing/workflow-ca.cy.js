@@ -1,6 +1,9 @@
 describe("Social Media App: Unauthorized user", () => {
-    it("CANNOT submit the log in form", () => {
+  beforeEach(() => {
     cy.visit("index.html");
+  });
+
+  it("CANNOT submit the log in form", () => {
     cy.get("#registerModal");
     cy.wait(1000);
     cy.get("#registerForm > .modal-footer > .btn-outline-success").dblclick();
@@ -19,9 +22,10 @@ describe("Social Media App: Unauthorized user", () => {
   });
 
   describe("Social Media App: authorized user", () => {
-   
-    it("CAN submit the log in form and access profile page", () => {
+    beforeEach(() => {
       cy.visit("index.html");
+    });
+    it("CAN submit the log in form and access profile page", () => {
       cy.get("#registerModal");
       cy.wait(1000);
       cy.get("#registerForm > .modal-footer > .btn-outline-success").dblclick();
@@ -29,8 +33,7 @@ describe("Social Media App: Unauthorized user", () => {
       cy.get("#loginPassword").type("password", { force: true, delay: 100 });
 
       cy.get("#loginForm").submit();
-       cy.visit("index.html");
-      );
+      cy.visit("index.html");
     });
 
     it("CAN logout the website", () => {
@@ -42,7 +45,6 @@ describe("Social Media App: Unauthorized user", () => {
       cy.get("#loginForm").submit();
       cy.wait(1000);
       cy.visit("index.html");
-      );
       cy.wait(1000);
       cy.get(".btn-outline-warning").dblclick();
     });
